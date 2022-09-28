@@ -107,6 +107,7 @@ export default function SearchRecipe() {
               setIngredient(e.target.value)
             }}
             label="Search"
+            data-testid="search-bar"
             variant="outlined"
             color="primary"
             placeholder="Find a recipe"
