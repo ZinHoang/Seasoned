@@ -82,7 +82,7 @@ export default function Recipe() {
               {label}
             </Typography>
             <img
-              style={{ width: '70%', borderRadius: '10px' }}
+              style={{ width: '70%', borderRadius: '13px' }}
               src={image}
               alt={label}
             />
