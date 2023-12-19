@@ -117,7 +117,11 @@ export default function SearchRecipe() {
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    <IconButton type="submit" aria-label="search" sx={{ p: '' }}>
+                    <IconButton
+                      type="submit"
+                      aria-label="search"
+                      sx={{ p: '' }}
+                    >
                       <SearchIcon />
                     </IconButton>
                   </InputAdornment>
@@ -216,7 +220,10 @@ export default function SearchRecipe() {
                     checked={mealType.breakfast}
                     name="Breakfast"
                     onChange={() =>
-                      setMealType({ ...mealType, breakfast: !mealType.breakfast })
+                      setMealType({
+                        ...mealType,
+                        breakfast: !mealType.breakfast,
+                      })
                     }
                   />
                 }
@@ -286,13 +293,19 @@ export default function SearchRecipe() {
           </>
         )}
         {loading && (
-          <img
-            width={'100%'}
-            src="https://cdn.dribbble.com/users/393062/screenshots/14492170/media/67f661f7f825b62980571026e1280675.gif"
-            alt="Loading animation"
-          />
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <img
+              style={{ width: '50%', height: 'auto' }}
+              src="https://cdn.dribbble.com/users/393062/screenshots/14492170/media/67f661f7f825b62980571026e1280675.gif"
+              alt="Loading animation"
+            />
+          </div>
         )}
-
       </Box>
       <Recipes />
       <SeasonalProduct />

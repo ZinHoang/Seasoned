@@ -45,11 +45,18 @@ export default function Recipe() {
   return (
     <div>
       {loading && (
-        <img
-          width={'100%'}
-          src="https://cdn.dribbble.com/users/393062/screenshots/14492170/media/67f661f7f825b62980571026e1280675.gif"
-          alt="loading gif"
-        />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <img
+            style={{ width: '50%', height: 'auto' }}
+            src="https://cdn.dribbble.com/users/393062/screenshots/14492170/media/67f661f7f825b62980571026e1280675.gif"
+            alt="Loading animation"
+          />
+        </div>
       )}
       {label && (
         <>
@@ -74,7 +81,11 @@ export default function Recipe() {
             >
               {label}
             </Typography>
-            <img width={'100%'} src={image} alt={label} />
+            <img
+              style={{ width: '70%', borderRadius: '10px' }}
+              src={image}
+              alt={label}
+            />
 
             <FormGroup>
               <FormControlLabel
@@ -131,12 +142,12 @@ export default function Recipe() {
               </Typography>
               <Box>
                 <Button
-                sx={{
-                  textAlign: "center",
-                  marginTop: "30px",
-                  bgcolor: "primary",
-                  padding: "8px 16px"
-                }}
+                  sx={{
+                    textAlign: 'center',
+                    marginTop: '30px',
+                    bgcolor: 'primary',
+                    padding: '8px 16px',
+                  }}
                   variant="outlined"
                   endIcon={<OpenInNew />}
                   target="_blank"

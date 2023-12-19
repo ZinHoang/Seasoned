@@ -10,7 +10,7 @@ export default function SeasonalProduct() {
 
   return (
     <div>
-      {seasonalProducts.length > 0 && (
+      {seasonalProducts?.length > 0 && (
         <Box display="flex" justifyContent={'center'} sx={{ p: 4 }}>
           <Typography variant="h5">Seasonal Products</Typography>
         </Box>
@@ -39,7 +39,7 @@ export default function SeasonalProduct() {
             </Grid>
           ))}
         </Grid>
-        {seasonalProducts.length > 0 && (
+        {seasonalProducts?.length > 0 && (
           <AppPagination setProducts={(product) => setProducts(product)} />
         )}
       </Container>
