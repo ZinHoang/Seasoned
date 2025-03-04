@@ -18,7 +18,7 @@
     "dev:server": "nodemon --watch server server/index.js",
     "build": "run-p build:client build:server",
     "build:client": "webpack --config client/webpack.config.js",
-    "build:server": "npm run knex -- migrate:latest",
+    "build:server": "npm run knex -- migrate:latest && npm run knex -- seed:run",
     "lint": "eslint --ext .js,.jsx .",
     "webpack": "webpack --config ./client/webpack.config.js",
     "webpack:production": "webpack --mode=production",
