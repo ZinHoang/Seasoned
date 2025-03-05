@@ -13,12 +13,7 @@ export async function getProduce() {
 
 export async function getAvailableProduct(season) {
   try {
-    let res
-    if (process.env.NODE_ENV === 'production' && process.env.DATABASE_URL) {
-      res = await request.get(process.env.DATABASE_URL)
-    } else {
-      res = await request.get(rootUrl + '/available/season/' + season)
-    }
+    const res = await request.get(rootUrl + '/available/season/' + season)
     return res.body
   } catch (err) {
     console.log('Err message: ' + err)
