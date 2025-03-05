@@ -16,7 +16,7 @@
     "dev": "run-p dev:client dev:server",
     "dev:client": "npm run webpack -- --watch",
     "dev:server": "nodemon --watch server server/index.js",
-    "build": "run-p build:client build:server",
+    "build": "npm run build:client && npm run build:server",
     "build:client": "webpack --config client/webpack.config.js",
     "build:server": "npm run knex -- migrate:latest && npm run knex -- seed:run",
     "lint": "eslint --ext .js,.jsx .",
