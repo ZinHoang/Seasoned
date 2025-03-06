@@ -11,10 +11,10 @@ const dataFilePath = path.join(
   '../public/data/produce_available_months.json'
 )
 const produceNameToImageMapping = {
-  Apples: '/images/apple.jpg',
-  // 'Apples - Royal Gala': '/images/apple.jpg',
-  // 'Apples - Braeburn': '/images/apple.jpg',
-  // 'Apples - Granny Smith': '/images/apple.jpg',
+  Apples: 'images/apple.jpg',
+  'Apples - Royal Gala': 'images/apple.jpg',
+  'Apples - Braeburn': 'images/apple.jpg',
+  'Apples - Granny Smith': 'images/apple.jpg',
   Apricots: 'images/apricot.jpg',
   Avocado: 'images/avocado.jpg',
   'Artichokes - Globe': 'images/artichoke-globe.jpg',
@@ -22,8 +22,8 @@ const produceNameToImageMapping = {
   Asparagus: 'images/asparagus.jpg',
   Beans: 'images/beans.jpg',
   Beetroot: 'images/beetroot.png',
-  Blackberries: '/images/blackberries.jpeg',
-  Blackcurrants: '/images/blackcurrants.jpeg',
+  Blackberries: 'images/blackberries.jpeg',
+  Blackcurrants: 'images/blackcurrants.jpeg',
   Blueberries: 'images/blueberry.jpg',
   Boysenberries: 'images/boysenberries.jpeg',
   'Brussels Sprouts': 'images/brussels-sprouts.jpg',
@@ -124,15 +124,11 @@ async function getProduceByMonths(months) {
     // Use the mapping for image_url
     const imageUrl = produceNameToImageMapping[name]
 
-    // Add or replace the produce in the map if it's the first time we're seeing this base produce,
-    // or if it's the generic version (without a specific variety)
-    if (!produceMap.has(baseName) || !name.includes(' - ')) {
-      produceMap.set(baseName, {
-        name: baseName,
-        display_name: name.includes(' - ') ? name.split(' - ')[0] : name,
-        image_url: imageUrl,
-      })
-    }
+    produceMap.set(baseName, {
+      name: baseName,
+      display_name: name.includes(' - ') ? name.split(' - ')[0] : name,
+      image_url: imageUrl,
+    })
   })
 
   // Convert map values to array and sort alphabetically
